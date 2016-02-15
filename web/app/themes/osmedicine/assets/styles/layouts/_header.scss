@@ -1,0 +1,128 @@
+$news_color:#FBB03B;
+$news_text_color:#F79648;
+$research_color:#29ABE2;
+$research_text_color:#95B4E2;
+$hitech_color:#F15A24;
+$hitech_text_color:#F15A24;
+h3{
+  font-size: 1.5rem;
+  line-height: 1.2;
+  margin: 0px;
+}
+h4{
+  font-size: 1.375rem;
+  line-height: 1.18;
+}
+h5{ 
+  font-size:1.125;
+  line-height: 1.222;
+}
+h3,h4,h5{ font-weight: 400;}
+a{
+  text-decoration: none;
+}
+article{
+  width: 100%;
+  position: relative;
+  margin-top: 1.5rem;
+}
+.wrap.container{
+  >.content.row{
+    display: flex;
+    justify-content: space-around;
+    .main{
+      width: 64.0625%;
+      display: inline-block;
+      vertical-align: top;
+    }
+    .sidebar{
+      width: 31.1718%;
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+}
+.article-content-wrapper{
+  display: inline-block;
+  width: 48.5%;
+  vertical-align: top;
+  margin-right:1.5%;
+  >header{
+    .updated,.author{ display:inline-block;}
+  }
+}
+.article-image-wrapper{
+  display: inline-block;
+  width: 50%;
+  vertical-align: top;
+  >img{
+    width:100%;
+    height:auto;
+  }
+}
+.news{
+  >h3{
+    background-color:$news_color;
+  }
+  h4,h5{
+    >a{
+      color:$news_text_color;
+    }
+  }
+}
+.research-science{
+  >h3{
+    background-color:$research_color;
+  }
+  h4,h5{
+    >a{
+      color:$research_text_color;
+    }  
+  }
+}
+.hi-tech-medicine{
+  >h3{
+    background-color:$hitech_color;
+  }
+  h4,h5{
+    >a{
+      color:$hitech_text_color;
+    }
+  }
+}
+
+.other-post-list{
+  list-style:none;
+  margin-left:0;
+  font-size:0;
+  display: flex;
+  justify-content: space-between;
+  li{  
+    display:inline-block;
+    vertical-align: top;
+    font-size:1rem;
+    .article-content-wrapper,.article-image-wrapper{
+      width:100%;
+      margin-right:0;
+    }
+  }
+  &.length1{
+    li{ width:100%}
+  }
+  &.length2{
+    li{ 
+      width:calc( 50% - 10px);
+      
+    }
+  }
+  &.length3{
+    li{ 
+      width: calc( 33.333% - 13.333px);
+     
+    }      
+  }
+  h5{
+    margin-top:1.5rem;
+    margin-bottom:0;
+  }
+}

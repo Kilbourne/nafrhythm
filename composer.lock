@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e384eb1a5193051e4d1857a0207ea49b",
-    "content-hash": "9715f335274d48d1c4a9d121f6503690",
+    "hash": "b7522e5cd6f2ba7d82ae2d0b2e4becba",
+    "content-hash": "59b246dbf07a4f11c66c2216ebca3a03",
     "packages": [
         {
             "name": "composer/installers",
@@ -553,46 +553,6 @@
             "homepage": "https://wordpress.org/plugins/post-types-order/"
         },
         {
-            "name": "wpackagist-plugin/siteorigin-panels",
-            "version": "2.2.2",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/siteorigin-panels/",
-                "reference": "tags/2.2.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/siteorigin-panels.2.2.2.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/siteorigin-panels/"
-        },
-        {
-            "name": "wpackagist-plugin/so-widgets-bundle",
-            "version": "1.5.6",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/so-widgets-bundle/",
-                "reference": "tags/1.5.6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/so-widgets-bundle.1.5.6.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/so-widgets-bundle/"
-        },
-        {
             "name": "wpackagist-plugin/svg-support",
             "version": "2.2.2",
             "source": {
@@ -611,26 +571,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/svg-support/"
-        },
-        {
-            "name": "wpackagist-plugin/woocommerce",
-            "version": "2.5.1",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/woocommerce/",
-                "reference": "tags/2.5.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/woocommerce.2.5.1.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/woocommerce/"
         }
     ],
     "packages-dev": [
@@ -653,6 +593,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/debug-bar/"
+        },
+        {
+            "name": "wpackagist-plugin/fakerpress",
+            "version": "0.4.2",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/fakerpress/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/fakerpress.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/fakerpress/"
         },
         {
             "name": "wpackagist-plugin/query-monitor",
