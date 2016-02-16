@@ -8,6 +8,7 @@ h3{
   font-size: 1.5rem;
   line-height: 1.2;
   margin: 0px;
+  padding: 0 5px;
 }
 h4{
   font-size: 1.375rem;
@@ -26,6 +27,86 @@ article{
   position: relative;
   margin-top: 1.5rem;
 }
+.icon::before{
+  content:'';
+  background-repeat:no-repeat;
+  width:42px;
+  height:37px;
+  display: inline-block;
+}
+.icon.fb::before{
+background-image:url(../images/fb.png)
+}
+.icon.twi::before{
+background-image:url(../images/twi.png)
+}
+.icon.rss::before{
+background-image:url(../images/rss.png)
+}
+
+.mast-head-firstrow {
+  background-color: rgb(127, 127, 127);
+  color: rgb(255, 255, 255);
+  padding: 10px 20px;
+  font-size: 0.625rem;
+  position: relative;
+  >.left,>.right{ display:inline-block;}
+  >.right.social{
+    position: absolute;
+    right: 20px;
+    top: 8px;
+  }
+}
+
+.mast-head-secondrow{
+  >img{
+    width:100%;
+    height:auto;
+  }
+}
+.nav-primary{
+  position: relative;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+#menu-menu-1{
+  list-style: outside none none;
+  margin: 0;
+  display: inline-block;
+  width: 100%;
+  padding: 0 20px;
+  .menu-item{
+    display: inline-block;
+    width: 14rem;
+    text-align: center;
+    background-color: #C4C4C4;
+    >a{ color:#fff;}
+  }
+  .search{
+    float: right;
+    background-color: rgb(249, 246, 246);
+    padding: 0px 5px;
+    >form{
+      height: 25px;
+      vertical-align: top;
+      >label{
+        width: 100%;
+        vertical-align: top;
+        height: 17px;
+        .screen-reader-text{ display:none; }
+        >input{
+          width: 100%;
+          padding: 0px;
+          border: 0px none;
+          font-size: 0.875rem;
+          background-color: rgb(249, 246, 246);
+        }
+      }
+      >input{ display:none; }
+    }
+  }
+}
+
 .wrap.container{
   >.content.row{
     display: flex;
@@ -124,5 +205,36 @@ article{
   h5{
     margin-top:1.5rem;
     margin-bottom:0;
+  }
+}
+footer.content-info{
+  font-size: 0.6875rem;
+  text-align: center;
+  background-color: rgb(249, 246, 246);
+  overflow: hidden;
+  padding: 10px 20px;
+  >.container>div{
+    display:inline-block;
+    vertical-align: top;
+  }
+  p{ margin:0 }
+  .info-rivista{
+    float: left;
+    text-align: left;
+  }
+  .footer-menu{
+    >a{
+      margin-right:5px;
+      padding-right:5px;
+      border-right: 1px solid #000;
+    }
+    >a:last-child{
+      margin-right: 0;
+      padding-right: 0;
+      border-right: none;
+    }
+  }
+  .info-menthalia{
+    float: right;
   }
 }

@@ -6,10 +6,10 @@
         <span>CONTATTI</span>
         <span>REGISTRATI</span>        
       </div><div class="right social">
-        <span class="icon fb"></span><span class="icon twi"></span> 
+        <span class="icon fb"></span><span class="icon twi"></span><span class="icon rss"></span>  
       </div>
     </div>
-    <div class="mast-head-secondrow"></div>  
+    <div class="mast-head-secondrow"><img src="<?php echo  get_stylesheet_directory_uri().'/dist/images/header.jpg';?>" alt=""></div>  
     <nav class="nav-primary">
       <?php
       if (has_nav_menu('primary_navigation')) :

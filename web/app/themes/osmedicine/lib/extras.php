@@ -354,5 +354,16 @@ add_action( 'widgets_init', function(){
 });
 
 
-?>
 
+
+add_filter('wp_nav_menu_items',__NAMESPACE__ . '\\add_search_box_to_menu', 10, 2);
+function add_search_box_to_menu( $items, $args ) {
+    if( $args->theme_location == 'primary_navigation' )
+        $items=$items.'<li class="menu-item search" >'.get_search_form(false).'</li>';
+      return $items;
+
+    
+}
+
+
+?>
