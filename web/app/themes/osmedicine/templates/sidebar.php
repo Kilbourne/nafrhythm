@@ -1,4 +1,4 @@
-<?php //dynamic_sidebar('sidebar-primary'); ?>
+<?php dynamic_sidebar('sidebar-primary'); ?>
 <!--
 <div id="Glide" class="glide">
     <div class="glide__wrapper">
