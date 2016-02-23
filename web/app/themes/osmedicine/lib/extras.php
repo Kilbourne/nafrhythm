@@ -35,8 +35,7 @@ add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
 
 
 function loop_category($category){
-  $idObj = get_category_by_slug($category); 
-
+  $idObj = get_category_by_slug($category);   
   $cat_name = $idObj->name;
   if($category==='news'){$number=4;}else{$number=1;}
   $args = array(
@@ -44,10 +43,9 @@ function loop_category($category){
     'category_name'    => $category,
   );
   $posts_array = get_posts( $args );
-  $length=count($posts_array);
-   get_the_category_list();
+  $length=count($posts_array);   
   if($length>0){
-  echo '<h3>'.$cat_name.'</h3>';
+  echo '<a href="'. get_category_link( $idObj->cat_ID ).' " ><h3 class="big-article-title">'.$cat_name.'</h3></a>';
   foreach ( $posts_array as $key=>$post ) : setup_postdata( $post ); 
     if($key===0){
       get_template_part('templates/content', get_post_type() != 'post' ? get_post_type() : get_post_format());

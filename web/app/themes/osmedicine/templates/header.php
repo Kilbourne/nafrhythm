@@ -2,9 +2,7 @@
   <div class="container">
     <div class="mast-head-firstrow clearfix">
       <div class="left">
-        <span>CHI SIAMO</span>
-        <span>CONTATTI</span>
-        <span>REGISTRATI</span>        
+        <span>CHI SIAMO</span><span>CONTATTI</span><span>REGISTRATI</span>        
       </div><div class="right social">
         <span class="icon fb"></span><span class="icon twi"></span><span class="icon rss"></span>  
       </div>
