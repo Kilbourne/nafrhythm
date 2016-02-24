@@ -78,13 +78,9 @@ a{
 article{
   width: 100%;
   position: relative;
-  margin-top: 1.5rem;
+  margin: 1rem 0;
 }
-p{
-  font-size:1rem;
-  line-height:1.58;
-  letter-spacing: -.003em;
-}
+
 a {
   transition: color .4s;
   color: #265C83;
@@ -195,14 +191,26 @@ background-image:url(../images/rss.png)
 .wrap.container{
   >.content.row{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding:0 20px;
     .main{
+      width:100%;
+      @include media-query(lap-and-up){
       width: 64.0625%;
+      }
       display: inline-block;
       vertical-align: top;
+      p{
+  font-size:1rem;
+  line-height:1.58;
+  letter-spacing: -.003em;
+}
     }
     .sidebar{
-      width: 31.1718%;
+      width:100%;
+      @include media-query(lap-and-up){
+        width: 31.1718%;
+      }
       display: inline-block;
       vertical-align: top;
     }
@@ -246,6 +254,7 @@ background-image:url(../images/rss.png)
     }
   }
 }
+
 .research-science{
   h3{
     background-color:$research_color;
@@ -266,7 +275,39 @@ background-image:url(../images/rss.png)
     }
   }
 }
-
+.news-cat-color{
+  color:$news_text_color;
+}
+.hi-tech_medicine-cat-color{
+  color:$hitech_text_color;
+}
+.research_science-cat-color{
+color:$research_text_color;
+}
+.news-cat-bg-color{
+  background-color:$news_text_color;
+  color:#fff;
+  >a{color:#fff;}
+}
+.hi-tech_medicine-cat-bg-color{
+  background-color:$hitech_text_color;
+  color:#fff;
+ >a{color:#fff;}
+}
+.research_science-cat-bg-color{
+background-color:$research_text_color;
+color:#fff;
+>a{color:#fff;}
+}
+.news-cat-br-color{
+  border-color:$news_text_color;
+}
+.hi-tech_medicine-cat-br-color{
+  border-color:$hitech_text_color;
+}
+.research_science-cat-br-color{
+border-color:$research_text_color;
+}
 .other-post-list{
   list-style:none;
   margin-left:0;
@@ -333,19 +374,49 @@ footer.content-info{
     float: right;
   }
 }
-body.single{
-  p{
+body.single article{
+  margin:0;
+  dd, ol, ul,p{
     font-size: 1.28rem;
     line-height: 1.58;
     letter-spacing: -.003em;
   }
-  .entry-meta{
+  img {
+  max-width: 100%!important;
+  height: auto;
+  }
+  blockquote {
+    margin: 15px 0 20px 0;  
+    padding: 5px 20px;  
+  background: #F0F0F0;  
+  font-style: italic;  
+  border-top-width: 6px;
+  border-top-style: solid;
+  line-height: 2;  
+  
+  color: #333;
+}
+  >header{
     margin-bottom: 1.5rem;
+    display: flex;
     time{
       text-align: center;
       display: inline-block;
       padding: 0px 1%;
       border: 1px solid;
+      width: 6rem;
+      margin-right: 1rem;
+    }
+    .single-title-wrap{
+      width: calc(100% - 7rem);
+      display: inline-block;
+      vertical-align: top;
+      position: relative;
+    }
+    .entry-title{
+      margin: 4px 0px 0px;
+      display: inline-block;
+      vertical-align: 3px;
     }
     .day{
       display: inline-block;
@@ -355,15 +426,79 @@ body.single{
           display: block;
     }
     .entry-category-list{
-      margin: 0px 0px 0px 2rem;
+      margin: 0;
       list-style: outside none none;
       display: inline-block;
-      vertical-align: 100%;      
+      position: absolute;
+      left: 0px;
+      bottom: 0px;     
     }
     .entry-category{
       display: inline-block;
-      padding: 0px 10%;
+      padding: 2.5px 10%;
       border: 1px solid;
+      line-height: 1;
+      font-size: 0.8rem;
     }
   }
+  .post-pagination{
+    overflow: hidden;
+    padding: 0px 2%;
+    margin-bottom: 1rem;
+    border-top: 1px solid #265C83;
+    border-bottom: 1px solid #265C83;
+    .prev{display: inline-block;
+float: left;}
+    .next{display: inline-block;
+float: right;}
+.prev,.next{
+  >span{
+    color:#265C83;
+    line-height: 1.5;
+display: inline-block;
+width: 2rem;
+text-align: center;
+font-size: 2rem;
+vertical-align: -3px;
+  }
+  }
+}
+.related-posts{
+  color:#265C83;
+  >h3{
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+  }
+}
+.related-post-list{
+  &.l1{.related-post{ width:100%; }}
+  &.l2{.related-post{ width:50%; }}
+  &.l3{.related-post{ width:33.333%; }}
+    list-style: outside none none;
+    margin: 0px;
+    font-size:0px;
+    .related-wrap{
+      display: block;
+      margin: 0px auto;
+
+    }
+    .related-post{display:inline-block;font-size:1rem;text-align: center;vertical-align: bottom;}
+    .related-post-date{
+      font-size: 0.85rem;
+      display: inline-block;
+    }
+
+    h4 {
+    font-size: 1.2rem;
+    display: inline-block;
+}
+}
+.juiz_sps_links_list{
+  justify-content: space-between;
+padding: 0px 3% !important;
+display: flex;
+.juiz_sps_item a .juiz_sps_icon{
+  font-size: 2rem;
+}
+}
 }

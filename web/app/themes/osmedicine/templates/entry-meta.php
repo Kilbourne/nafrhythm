@@ -1,5 +1,7 @@
 <div class="entry-meta">
-<time class="updated" datetime="<?= get_post_time('c', true); ?>"><span class="day"><?= get_the_date('d'); ?></span><span class="month"><?= get_the_date('M Y'); ?></span> </time>
+<time class="updated" datetime="<?= get_post_time('c', true); ?>"><?= get_the_date(); ?></time>
+
+
 <?php 
 
 if(is_single()){

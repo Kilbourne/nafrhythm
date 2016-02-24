@@ -36,6 +36,19 @@
         // JavaScript to be fired on the home page, after the init JS
       }
     },
+    'singlepost':{
+      init: function(){        
+        var widthArr=[];
+        $('.related-wrap').each(function(i){
+          var height= $(this).height()+1;
+          widthArr.push(height);
+          if(i===$('.related-wrap').length-1){
+            var final=Math.max.apply(null,widthArr);
+            $('.related-post-img-wrap img').height(final);
+          }
+        });
+      }
+    },
     // About us page, note the change from about-us to about_us.
     'about_us': {
       init: function() {

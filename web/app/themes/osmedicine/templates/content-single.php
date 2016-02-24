@@ -1,21 +1,20 @@
 <?php while (have_posts()) : the_post(); ?>
   <article <?php post_class(); ?>>
     <header>
-      <h1 class="entry-title"><?php the_title(); ?></h1>
-      <?php get_template_part('templates/entry-meta'); ?>
+      <?php get_template_part('templates/date-meta'); ?>
     </header>
     <div class="entry-content">
       <?php the_content(); ?>
     </div>
     <footer>
-      <?php wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); 
-      previous_post_link();
-      next_post_link();
-
+      <div class="post-pagination"><div class="prev"><?php previous_post_link('<span>&laquo;</span> %link'); ?></div> <div class="next"><?php next_post_link(' %link <span>&raquo;</span>'); ?></div></div>   
+      
+      
+<?php
        
        
     
-       $categories=get_the_category();
+       $categories=wp_get_post_categories($post->ID);
         $orig_post = $post;
      $args=array( 
             'category__in' => $categories,
@@ -23,22 +22,25 @@
             'posts_per_page'=>3
           );  
      $my_query = new wp_query( $args );
-     
-     if ( have_posts() ) {
+     $count = $my_query->post_count;
+     if ( $my_query->have_posts() ) {
      
         ?>
 <div class="related-posts">
-   <ul class="related-post-list">
+<h3>Articoli Correlati</h3>
+   <ul class="related-post-list <?php echo 'l'.$count; ?>">
         <?php
          while( $my_query->have_posts() ) {
     $my_query->the_post(); ?>
 
 <li class="related-post">
+  <div class="related-wrap">
   <div class="related-post-img-wrap">
-    
+    <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium'); ?></a>
   </div>  
-  <div class="related-post-date"><?php the_date() ?></div>   
-  <h4 class="related-post-title"><?php the_title() ?></h4> 
+  <div class="related-post-date"><?php the_date(); ?></div> <br/> 
+  <h4 class="related-post-title"><a href="<?php the_permalink(); ?>" ><?php the_title(); ?></h4></a>
+  </div>
 </li>   
 
     <?php
