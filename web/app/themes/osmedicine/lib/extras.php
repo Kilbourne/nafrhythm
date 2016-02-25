@@ -43,21 +43,35 @@ function loop_category($category){
     'category_name'    => $category,
   );
   $posts_array = get_posts( $args );
+  
   $length=count($posts_array);   
   if($length>0){
   echo '<a href="'. get_category_link( $idObj->cat_ID ).' " ><h3 class="big-article-title">'.$cat_name.'</h3></a>';
-  foreach ( $posts_array as $key=>$post ) : setup_postdata( $post ); 
+  global $post;
+  foreach ( $posts_array as $key=>$post ) { setup_postdata( $post ); 
     if($key===0){
       get_template_part('templates/content', get_post_type() != 'post' ? get_post_type() : get_post_format());
     }else{
       if($key===1){ echo '<ul class="other-post-list length'.($length-1).'">';}
+
         get_template_part('templates/content','post-intro');
       if($key===$length){ echo '</ul>'; }
     }
- endforeach; 
+ } 
   wp_reset_postdata();
     }
 }
+
+
+
+
+add_filter('widget_text', 'do_shortcode');
+
+
+
+
+
+
 
 /**
  * Adds Foo_Widget widget.

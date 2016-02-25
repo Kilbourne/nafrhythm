@@ -1,4 +1,5 @@
 <li <?php post_class(); ?>>
+
 <div class="article-image-wrapper">
 	<?php the_post_thumbnail(); ?>
 </div>

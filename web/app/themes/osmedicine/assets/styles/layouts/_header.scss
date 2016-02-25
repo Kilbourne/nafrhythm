@@ -1,9 +1,3 @@
-$news_color:#FBB03B;
-$news_text_color:#F79648;
-$research_color:#29ABE2;
-$research_text_color:#29ABE2;
-$hitech_color:#F15A24;
-$hitech_text_color:#F15A24;
 @font-face {
   font-family:osmedicine-sans-serif-font;
   font-style:normal;
@@ -239,14 +233,6 @@ background-image:url(../images/rss.png)
   }
 }
 .news{
-  h3{
-    background-color:$news_color;
-  }
-  h4,h5{
-    >a{
-      color:$news_text_color;
-    }
-  }
   h5{
     >a{
       font-size:1.128rem;
@@ -255,58 +241,17 @@ background-image:url(../images/rss.png)
   }
 }
 
-.research-science{
-  h3{
-    background-color:$research_color;
-  }
-  h4,h5{
-    >a{
-      color:$research_text_color;
-    }  
-  }
-}
-.hi-tech-medicine{
-  h3{
-    background-color:$hitech_color;
-  }
-  h4,h5{
-    >a{
-      color:$hitech_text_color;
-    }
-  }
-}
-.news-cat-color{
-  color:$news_text_color;
-}
-.hi-tech_medicine-cat-color{
-  color:$hitech_text_color;
-}
-.research_science-cat-color{
-color:$research_text_color;
-}
 .news-cat-bg-color{
-  background-color:$news_text_color;
   color:#fff;
   >a{color:#fff;}
 }
 .hi-tech_medicine-cat-bg-color{
-  background-color:$hitech_text_color;
   color:#fff;
  >a{color:#fff;}
 }
 .research_science-cat-bg-color{
-background-color:$research_text_color;
 color:#fff;
 >a{color:#fff;}
-}
-.news-cat-br-color{
-  border-color:$news_text_color;
-}
-.hi-tech_medicine-cat-br-color{
-  border-color:$hitech_text_color;
-}
-.research_science-cat-br-color{
-border-color:$research_text_color;
 }
 .other-post-list{
   list-style:none;
@@ -501,4 +446,116 @@ display: flex;
   font-size: 2rem;
 }
 }
+}
+
+
+aside{
+  .widget_siw_widget{
+    margin-bottom: 1.5rem; 
+  }
+  .upme-login-widget {
+    margin-bottom: 1.5rem;
+    > h3 {
+    background-color: #00A99D;
+    color: #fff;
+    padding: .5% 3%;
+    margin-bottom: 1rem;
+    }
+  }
+  .soliloquy{
+    >h3{
+      background-color: rgb(199, 178, 153);
+      color: rgb(255, 255, 255);
+      padding: 0.5% 3%;
+    }
+    .soliloquy-container{margin-top:2rem;}
+    .soliloquy-control-nav{
+      left: 50%;
+      transform: translate(-50%);
+      li a{
+        background-color: rgb(196, 196, 196);
+        border-radius: 50%;
+        background-image:none;
+        &:hover, &.active, &.soliloquy-active{
+          background-color: #6B6B6B;
+        }
+      }
+    }
+    .image-wrap{
+      display: inline-block;
+      max-width: 100px;
+      float: left;
+      margin-right: 1rem;
+      >img{height: auto;}
+    }
+    .text-wrap{
+      font-size:1rem;
+      p{color:#999999;}
+      >h3{ font-size:1.2rem;}
+    }
+  }
+  
+  >.widget_text{
+    >h3{
+      background-color: rgb(34, 181, 115);
+      color: rgb(255, 255, 255);
+      padding: 0.5% 3%;
+      margin-bottom: 1rem;
+    }
+    ul.wptabsy-nav.tabsy-nav.tabsy-desktop{
+      display:flex !important;
+      padding-top: 0 !important;
+      border-top: none !important;
+      margin-bottom:1rem;
+      position:static !important;
+      >li{ flex-grow:1 !important;
+        border:none !important;
+        >a{
+          font-size: 1rem;
+          padding: 2% 2.5%;
+          letter-spacing: -1px;
+          text-align: center;
+          border:none !important;
+          background: #DEDEDE !important;
+          background-image:none !important;
+          color: #999999 !important;
+        }
+        &.tabsy-active{
+          a{
+            background: #22b573 !important;
+            color: #fff !important;
+          }
+        }
+      }
+    }  
+    .tabsy-nav.tabsy-mobile{
+      display:none !important;
+    }
+    .tabsy-container{
+      border:none !important;
+      .wptabsy-content.tabsy-content{
+        height:auto !important;
+        padding:0 !important;
+        .image-wrap {    
+            width: 100px;
+            vertical-align: top;
+            display: inline-block;
+            margin-right: 1rem;
+            >img{height:auto;}
+        }
+        .text-wrap{
+          display: inline-block;
+          width: calc(100% - 100px - 1rem);
+          font-size: 0.9rem;
+          padding: 0 7.5% 0 0;
+          p{color:#999999;}
+          >h3{
+              font-size: 1rem;
+              padding: 0px;
+          }
+        }
+      }
+    }
+  }
+  
 }

@@ -9,8 +9,8 @@ get_template_part('templates/page', 'header'); ?>
   <?php get_search_form(); ?>
 <?php endif; ?>
 <div class="category news"><?php  Extras\loop_category('news');?></div>
-<div class="category research-science"><?php  Extras\loop_category('research_science');?></div>
-<div class="category hi-tech-medicine"><?php  Extras\loop_category('hi-tech_medicine');?> </div>
+<div class="category research_science"><?php  Extras\loop_category('research_science');?></div>
+<div class="category hi-tech_medicine"><?php  Extras\loop_category('hi-tech_medicine');?> </div>
 
 
 
