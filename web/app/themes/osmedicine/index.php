@@ -1,6 +1,6 @@
-<?php 
+<?php
 use Roots\Sage\Extras;
-get_template_part('templates/page', 'header'); ?>
+ get_template_part('templates/page', 'header'); ?>
 
 <?php if (!have_posts()) : ?>
   <div class="alert alert-warning">
@@ -8,10 +8,9 @@ get_template_part('templates/page', 'header'); ?>
   </div>
   <?php get_search_form(); ?>
 <?php endif; ?>
-<div class="category news"><?php  Extras\loop_category('news');?></div>
-<div class="category research_science"><?php  Extras\loop_category('research_science');?></div>
-<div class="category hi-tech_medicine"><?php  Extras\loop_category('hi-tech_medicine');?> </div>
 
+<?php while (have_posts()) : the_post(); ?>
+  <?php get_template_part('templates/content', get_post_type() != 'post' ? get_post_type() : get_post_format()); ?>
+<?php endwhile; ?>
 
-
-
+<?php Extras\wpex_pagination(); ?>
