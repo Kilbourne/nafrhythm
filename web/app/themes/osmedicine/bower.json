@@ -48,6 +48,17 @@
     "enquire": "~2.1.2",
     "fastclick": "~1.0.6",
     "imagesloaded": "~4.1.0",
-    "glidejs": "~2.0.6"
+    "unslider": "~2.0.3",
+    "jquery.event.swipe": "~0.5.4",
+    "history.js": "~1.8.0"
+  },
+  "overrides": {
+    "unslider": {
+      "main": [
+        "src/js/unslider.js",
+        "dist/css/unslider.css",
+        "dist/css/unslider-dots.css"
+      ]
+    }
   }
 }
