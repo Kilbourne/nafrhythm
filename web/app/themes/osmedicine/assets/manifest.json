@@ -2,7 +2,9 @@
   "dependencies": {
     "main.js": {
       "files": [
-        "scripts/main.js"
+      "scripts/jquery.event.move.js",
+        "scripts/jquery.history.js",
+        "scripts/main.js"        
       ],
       "main": true
     },
