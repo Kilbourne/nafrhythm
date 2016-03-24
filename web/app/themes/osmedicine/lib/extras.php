@@ -34,341 +34,12 @@ function excerpt_more() {
 add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
 
 
-function loop_category($category){
-  $idObj = get_category_by_slug($category);   
-  $cat_name = $idObj->name;
-  if($category==='news'){$number=4;}else{$number=1;}
-  $args = array(
-    'posts_per_page'   => $number,
-    'category_name'    => $category,
-  );
-  $posts_array = get_posts( $args );
-  
-  $length=count($posts_array);   
-  if($length>0){
-  echo '<a href="'. get_category_link( $idObj->cat_ID ).' " ><h3 class="big-article-title">'.$cat_name.'</h3></a>';
-  global $post;
-  foreach ( $posts_array as $key=>$post ) { setup_postdata( $post ); 
-    if($key===0){
-      get_template_part('templates/content', get_post_type() != 'post' ? get_post_type() : get_post_format());
-    }else{
-      if($key===1){ echo '<ul class="other-post-list length'.($length-1).'">';}
-
-        get_template_part('templates/content','post-intro');
-      if($key===$length){ echo '</ul>'; }
-    }
- } 
-  wp_reset_postdata();
-    }
-}
-
-
-
-
-add_filter('widget_text', 'do_shortcode');
 
 
 
 
 
-
-
-/**
- * Adds Foo_Widget widget.
- */
-class Foo_Widget extends WP_Widget {
-
-  /**
-   * Register widget with WordPress.
-   */
-  function __construct() {
-    parent::__construct(
-      'foo_widget', // Base ID
-      __( 'Widget Title', 'text_domain' ), // Name
-      array( 'description' => __( 'A Foo Widget', 'text_domain' ), ) // Args
-    );
-  }
-
-  /**
-   * Front-end display of widget.
-   *
-   * @see WP_Widget::widget()
-   *
-   * @param array $args     Widget arguments.
-   * @param array $instance Saved values from database.
-   */
-  public function widget( $args, $instance ) {
-    echo $args['before_widget'];
-    if ( ! empty( $instance['title'] ) ) {
-      echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ). $args['after_title'];
-    }
-    echo __( 'Hello, World!', 'text_domain' );
-    echo $args['after_widget'];
-  }
-
-  /**
-   * Back-end widget form.
-   *
-   * @see WP_Widget::form()
-   *
-   * @param array $instance Previously saved values from database.
-   */
-  public function form( $instance ) {
-    $title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'New title', 'text_domain' );
-    ?>
-    <p>
-    <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
-    <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
-    </p>
-    <?php 
-  }
-
-  /**
-   * Sanitize widget form values as they are saved.
-   *
-   * @see WP_Widget::update()
-   *
-   * @param array $new_instance Values just sent to be saved.
-   * @param array $old_instance Previously saved values from database.
-   *
-   * @return array Updated safe values to be saved.
-   */
-  public function update( $new_instance, $old_instance ) {
-    $instance = array();
-    $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
-
-    return $instance;
-  }
-
-} // class Foo_Widget
-
-/**
- * Adds Foo_Widget widget.
- */
-class Foo_Widget1 extends WP_Widget {
-
-  /**
-   * Register widget with WordPress.
-   */
-  function __construct() {
-    parent::__construct(
-      'foo_widget', // Base ID
-      __( 'Widget Title', 'text_domain' ), // Name
-      array( 'description' => __( 'A Foo Widget', 'text_domain' ), ) // Args
-    );
-  }
-
-  /**
-   * Front-end display of widget.
-   *
-   * @see WP_Widget::widget()
-   *
-   * @param array $args     Widget arguments.
-   * @param array $instance Saved values from database.
-   */
-  public function widget( $args, $instance ) {
-    echo $args['before_widget'];
-    if ( ! empty( $instance['title'] ) ) {
-      echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ). $args['after_title'];
-    }
-    echo __( 'Hello, World!', 'text_domain' );
-    echo $args['after_widget'];
-  }
-
-  /**
-   * Back-end widget form.
-   *
-   * @see WP_Widget::form()
-   *
-   * @param array $instance Previously saved values from database.
-   */
-  public function form( $instance ) {
-    $title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'New title', 'text_domain' );
-    ?>
-    <p>
-    <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
-    <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
-    </p>
-    <?php 
-  }
-
-  /**
-   * Sanitize widget form values as they are saved.
-   *
-   * @see WP_Widget::update()
-   *
-   * @param array $new_instance Values just sent to be saved.
-   * @param array $old_instance Previously saved values from database.
-   *
-   * @return array Updated safe values to be saved.
-   */
-  public function update( $new_instance, $old_instance ) {
-    $instance = array();
-    $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
-
-    return $instance;
-  }
-
-} // class Foo_Widget
-
-/**
- * Adds Foo_Widget widget.
- */
-class Advertise extends WP_Widget {
-
-  /**
-   * Register widget with WordPress.
-   */
-  function __construct() {
-    parent::__construct(
-      'advertise', // Base ID
-      __( 'Advertise', 'text_domain' ), // Name
-      array( 'description' => __( 'Advertise Widget', 'text_domain' ), ) // Args
-    );
-     add_action('admin_enqueue_scripts', array($this, 'upload_scripts'));
-  }
-
-  /**
-   * Front-end display of widget.
-   *
-   * @see WP_Widget::widget()
-   *
-   * @param array $args     Widget arguments.
-   * @param array $instance Saved values from database.
-   */
-  public function widget( $args, $instance ) {
-    echo $args['before_widget'];
-    if ( ! empty( $instance['title'] ) ) {
-      echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ). $args['after_title'];
-    }
-    echo '<div class="advertise">'.$instance['image'];
-    echo $args['after_widget'];
-  }
-   public function upload_scripts()
-    {
-        wp_enqueue_script('media-upload');
-        wp_enqueue_script('thickbox');
-        wp_enqueue_script('upload_media_widget', plugin_dir_url(__FILE__) . 'upload-media.js', array('jquery'));
-
-        wp_enqueue_style('thickbox');
-    }
-  /**
-   * Back-end widget form.
-   *
-   * @see WP_Widget::form()
-   *
-   * @param array $instance Previously saved values from database.
-   */
-  public function form( $instance ) {
-            $image = '';
-        if(isset($instance['image']))
-        {
-            $image = $instance['image'];
-        }
-    
-    ?>
-    <p>
-    <label for="<?php echo $this->get_field_id( 'image' ); ?>"><?php _e( 'Image','sage' ); ?></label>
-    <input class="widefat" id="<?php echo $this->get_field_id( 'image' ); ?>" name="<?php echo $this->get_field_name( 'image' ); ?>" type="text" value="<?php echo esc_attr( $image ); ?>">
-    <input class="upload_image_button" type="button" value="Upload Image" />
-    </p>
-    <?php 
-  }
-
-  /**
-   * Sanitize widget form values as they are saved.
-   *
-   * @see WP_Widget::update()
-   *
-   * @param array $new_instance Values just sent to be saved.
-   * @param array $old_instance Previously saved values from database.
-   *
-   * @return array Updated safe values to be saved.
-   */
-  public function update( $new_instance, $old_instance ) {
-    $instance = array();
-    $instance['image'] = ( ! empty( $new_instance['image'] ) ) ? strip_tags( $new_instance['image'] ) : '';
-
-    return $instance;
-  }
-
-} // class Foo_Widget
-
-/**
- * Adds Foo_Widget widget.
- */
-class Login extends WP_Widget {
-
-  /**
-   * Register widget with WordPress.
-   */
-  function __construct() {
-    parent::__construct(
-      'login', // Base ID
-      __( 'Login', 'text_domain' ), // Name
-      array( 'description' => __( 'Login Widget', 'text_domain' ), ) // Args
-    );
-  }
-
-  /**
-   * Front-end display of widget.
-   *
-   * @see WP_Widget::widget()
-   *
-   * @param array $args     Widget arguments.
-   * @param array $instance Saved values from database.
-   */
-  public function widget( $args, $instance ) {
-    echo $args['before_widget'];
-    if ( ! empty( $instance['title'] ) ) {
-      echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ). $args['after_title'];
-    }
-    echo wp_login_form(); 
-    echo $args['after_widget'];
-  }
-
-  /**
-   * Back-end widget form.
-   *
-   * @see WP_Widget::form()
-   *
-   * @param array $instance Previously saved values from database.
-   */
-  public function form( $instance ) {
-
-    ?>
-
-    <?php 
-  }
-
-  /**
-   * Sanitize widget form values as they are saved.
-   *
-   * @see WP_Widget::update()
-   *
-   * @param array $new_instance Values just sent to be saved.
-   * @param array $old_instance Previously saved values from database.
-   *
-   * @return array Updated safe values to be saved.
-   */
-  public function update( $new_instance, $old_instance ) {
-    $instance = array();
-    $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
-
-    return $instance;
-  }
-
-} // class Foo_Widget
-
-add_action( 'widgets_init', function(){
-     register_widget( __NAMESPACE__ . '\\Login' );
-     register_widget( __NAMESPACE__ . '\\Advertise' );
-});
-
-
-
-
-add_filter('wp_nav_menu_items',__NAMESPACE__ . '\\add_search_box_to_menu', 10, 2);
+//add_filter('wp_nav_menu_items',__NAMESPACE__ . '\\add_search_box_to_menu', 10, 2);
 function add_search_box_to_menu( $items, $args ) {
     if( $args->theme_location == 'primary_navigation' )
         $items=$items.'<li class="menu-item search" >'.get_search_form(false).'</li>';
@@ -377,5 +48,76 @@ function add_search_box_to_menu( $items, $args ) {
     
 }
 
+// Numbered Pagination
+if ( !function_exists( 'wpex_pagination' ) ) {
+  
+  function wpex_pagination() {
+    
+    $prev_arrow = is_rtl() ? '&rarr;' : '&larr;';
+    $next_arrow = is_rtl() ? '&larr;' : '&rarr;';
+    
+    global $wp_query;
+    $total = $wp_query->max_num_pages;
+    $big = 999999999; // need an unlikely integer
+    if( $total > 1 )  {
+       if( !$current_page = get_query_var('paged') )
+         $current_page = 1;
+       if( get_option('permalink_structure') ) {
+         $format = 'page/%#%/';
+       } else {
+         $format = '&paged=%#%';
+       }
+      echo paginate_links(array(
+        'base'      => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+        'format'    => $format,
+        'current'   => max( 1, get_query_var('paged') ),
+        'total'     => $total,
+        'mid_size'    => 2,
+        'type'      => 'list',
+        'prev_text'   => $prev_arrow,
+        'next_text'   => $next_arrow,
+       ) );
+    }
+  }
+  
+}
+//add_action( 'after_setup_theme', __NAMESPACE__ . '\\tgm_envira_define_license_key' );
+function tgm_envira_define_license_key() {
+    
+    // If the key has not already been defined, define it now.
+    if ( ! defined( 'ENVIRA_LICENSE_KEY' ) ) {
+        define( 'ENVIRA_LICENSE_KEY', 'f21b503f7793be583daab680a7f8bda7' );
+    }
+    
+}
 
+add_action( 'wp_ajax_gesualdi_disco', __NAMESPACE__ . '\\gesualdi_disco' );
+add_action( 'wp_ajax_nopriv_gesualdi_disco', __NAMESPACE__ . '\\gesualdi_disco' );
+function gesualdi_disco() {
+    if ( ! wp_verify_nonce( $_POST['nonce'], 'gesualdi-nonce' ) ) die ( 'Non autorizzato!');
+    ob_clean();
+    $post_link=isset( $_POST['postlink'] ) ? sanitize_text_field($_POST['postlink'] ):'';
+    if($post_link !== ''){$post_id=url_to_postid($post_link);}else{
+      $data=  __( '<p class="error"><strong>ERROR</strong>: No link. </p>', 'sage' );
+    wp_send_json_error($data);
+    wp_die();
+    }
+    if($post_id !==0){
+      $disco=get_post($post_id );
+      setup_postdata($GLOBALS['post'] =& $disco );
+      //$title=mb_convert_encoding(get_the_title(), 'UTF-8', 'HTML-ENTITIES');
+      $title=html_entity_decode( get_the_title( ), ENT_QUOTES, 'UTF-8' ) ;
+      $thumbnail=get_the_post_thumbnail($disco->ID,'thumbnail');
+      $tracklist=get_field('tracklist',$disco->ID);
+      $excerpt=get_the_excerpt( );
+      $audio_sample=get_field('audio_sample',$disco->ID);
+      wp_reset_postdata();
+      $data= array('title'=>$title,'thumb'=>$thumbnail,'tracklist'=>$tracklist,'excerpt'=>wpautop($excerpt,true),'audio_sample'=>$audio_sample);
+        wp_send_json_success( $data );
+    }else{
+      $data=  __( '<p class="error"><strong>ERROR</strong>: No post with id: </p>', 'sage' ).$post_id ;
+    wp_send_json_error($data);
+    }
+    wp_die();
+}
 ?>
