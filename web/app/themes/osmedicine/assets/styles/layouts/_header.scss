@@ -463,22 +463,28 @@ justify-content: space-between;
 
 width: 30px;
 height: 30px;
-background-size: contain;
+background: url('../images/sprites.png') no-repeat;
 border-radius: 50%;
 background-color: #fff;
+background-size: 200% 200%;
 		}
 		&.fb::before{
-			background-image: url('../images/fb.png');
+			
+			background-position: 0 0;
+
 		}
 				&.yt::before{
-			background-image: url('../images/yt.png');
+			
+			background-position: 102% 102%;
 		}
 				&.insta::before{
-			background-image: url('../images/inst.png');
+			
+			background-position: 101% 0;
 		}
 				&.mail::before{
-			background-image: url('../images/mail.png');
+			
 			border: 1px solid #fff;
+			background-position: 0 100%;
 		}
 	}
 
