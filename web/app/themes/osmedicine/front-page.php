@@ -1,6 +1,6 @@
 <?php while (have_posts()) : the_post(); ?>
   <?php //get_template_part('templates/page', 'header'); ?>
-  <?php 
+  <?php
   	$slides=get_posts(array(
   		"post_type"=>"home_slider",
   		"posts_per_page"=>-1
@@ -11,7 +11,7 @@
     			//echo var_dump($slides);
   		foreach ($slides as $key => $slide) {
   			//echo var_dump($slide);
-  			echo "<li>".get_the_post_thumbnail( $slide->ID, "full")."</li>";
+  			echo "<li>".get_the_post_thumbnail( $slide->ID, "large")."</li>";
   		}
   		echo "</ul>
 				</div>";

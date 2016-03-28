@@ -23,6 +23,9 @@
           var isOpen=false;
           $(document).on('click',function(e){ if (e.which != 2 && !$(e.target).closest('#responsive-menu, #click-menu').length) { closeRM() }});
           $(document).on('click', '#click-menu', function() { !isOpen ? openRM() : closeRM() });
+          if (window.matchMedia("(min-width: 800px)").matches && isOpen) {
+            closeRM();
+          }
           function openRM() {
               //$('#responsive-menu').css('display', 'block');
               $('#responsive-menu').addClass('RMOpened');
@@ -73,12 +76,12 @@
         var music = document.getElementById('music');
           $('.disco-link').click(ajaxDisco);
           $('#pButton').click(playAudio);
-          $('#music').on('ended',resetPlayAudio) 
+          $('#music').on('ended',resetPlayAudio)
 
           History.Adapter.bind(window,'statechange',function statechangeCallback (){ // Note: We are using statechange instead of popstate
            var State = History.getState(); // Note: We are using History.getState() instead of event.state
            var data=State.data.data,
-              
+
            p=$('#'+State.data.target);
 
                                        $('.extended-disc-panel').fadeOut('400', function() {
@@ -86,7 +89,7 @@
                               $('.discs-list>li.active').add(p).toggleClass('active');
                             $(".disco-title").text(data.title);
                             var src= $(".copertina>img");
-                            src.remove();                            
+                            src.remove();
                             $(".copertina").append(data.thumb);
                             //$(target).children('img').remove()
                             //$(target).append(src);
@@ -97,7 +100,7 @@
                               $('#pButton').show();
                             }else{
                               $('#pButton').hide();
-                            }  
+                            }
                             $('.extended-disc-panel').fadeIn('400',function(){
                                      $('.extended-disc-panel').removeClass('not-visible');
                             });
@@ -115,7 +118,7 @@
                             return location === searched;
                           }).click();
             History.Adapter.trigger(window,'statechange')
-          }else{         
+          }else{
             $('.extended-disc-panel').removeClass('not-visible');
           }
           function ajaxDisco(e){
@@ -140,7 +143,7 @@ var splitted=url.split('/'),
                             var obj ={disco:url,data:data,target:target.parentElement.id};
                             localStorage.setItem(url, JSON.stringify(obj));
                              History.pushState(obj, data.title, '?disco='+location);
-                            
+
                           }
                         });
           }
@@ -155,7 +158,7 @@ var splitted=url.split('/'),
               music.play();
               pButton.className = "";
               pButton.className = "pause";
-            } else { 
+            } else {
               music.pause();
               pButton.className = "";
               pButton.className = "play";
@@ -178,7 +181,7 @@ var splitted=url.split('/'),
         // JavaScript to be fired on all pages, after page specific JS is fired
       }
     }
-   
+
   };
 
   // The routing fires all common scripts, followed by the page specific scripts.
