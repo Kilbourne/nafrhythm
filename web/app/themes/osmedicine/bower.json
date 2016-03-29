@@ -22,35 +22,19 @@
     "inuit-lists": "latest",
     "inuit-images": "latest",
     "inuit-page": "latest",
-    "inuit-block": "latest",
-    "inuit-box": "latest",
-    "inuit-buttons": "latest",
-    "inuit-flag": "latest",
-    "inuit-layout": "latest",
-    "inuit-list-bare": "latest",
-    "inuit-list-block": "latest",
-    "inuit-list-inline": "latest",
-    "inuit-list-ui": "latest",
-    "inuit-media": "latest",
-    "inuit-pack": "latest",
-    "inuit-tables": "latest",
-    "inuit-tabs": "latest",
     "inuit-clearfix": "latest",
     "inuit-headings-trumps": "latest",
     "inuit-print": "latest",
     "inuit-spacing": "latest",
     "inuit-spacing-responsive": "latest",
     "inuit-widths": "latest",
-    "inuit-widths-responsive": "latest",
-    "underscore": "~1.8.3",
+    "inuit-widths-responsive": "latest",    
     "jquery": "~1.11.3",
-    "font-awesome": "~4.5.0",
-    "enquire": "~2.1.2",
     "fastclick": "~1.0.6",
     "imagesloaded": "~4.1.0",
     "unslider": "~2.0.3",
     "jquery.event.swipe": "~0.5.4",
-    "history.js": "~1.8.0"
+    "lity": "~1.6.4"
   },
   "overrides": {
     "unslider": {
@@ -59,6 +43,12 @@
         "dist/css/unslider.css",
         "dist/css/unslider-dots.css"
       ]
+    }
+    ,"lity":{
+        "main":[
+        "dist/lity.min.js",
+        "dist/lity.min.css"
+        ]
     }
   }
 }

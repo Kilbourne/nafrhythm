@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6239343c7ec323144d08e4902f9f3289",
-    "content-hash": "9062690dfac0cfe99d54602245ec0f78",
+    "hash": "8a3213a69471533e9f709ac5cf2bf229",
+    "content-hash": "b4b79056ef234a0a5c7a937ecbe0ca70",
     "packages": [
         {
             "name": "composer/installers",
@@ -326,16 +326,36 @@
             "time": "2015-12-29 15:10:30"
         },
         {
-            "name": "wpackagist-plugin/custom-post-type-ui",
-            "version": "1.2.4",
+            "name": "wpackagist-plugin/add-meta-tags",
+            "version": "2.10.9",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/custom-post-type-ui/",
-                "reference": "tags/1.2.4"
+                "url": "https://plugins.svn.wordpress.org/add-meta-tags/",
+                "reference": "tags/2.10.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/custom-post-type-ui.1.2.4.zip",
+                "url": "https://downloads.wordpress.org/plugin/add-meta-tags.2.10.9.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/add-meta-tags/"
+        },
+        {
+            "name": "wpackagist-plugin/custom-post-type-ui",
+            "version": "1.3.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/custom-post-type-ui/",
+                "reference": "tags/1.3.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/custom-post-type-ui.1.3.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -364,6 +384,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/custom-upload-dir/"
+        },
+        {
+            "name": "wpackagist-plugin/disable-comments",
+            "version": "1.4",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/disable-comments/",
+                "reference": "tags/1.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/disable-comments.1.4.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/disable-comments/"
         },
         {
             "name": "wpackagist-plugin/duplicate-post",
@@ -406,6 +446,106 @@
             "homepage": "https://wordpress.org/plugins/enable-media-replace/"
         },
         {
+            "name": "wpackagist-plugin/ewww-image-optimizer",
+            "version": "2.6.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/ewww-image-optimizer/",
+                "reference": "tags/2.6.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/ewww-image-optimizer.2.6.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/ewww-image-optimizer/"
+        },
+        {
+            "name": "wpackagist-plugin/favicon-by-realfavicongenerator",
+            "version": "1.3.3",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/favicon-by-realfavicongenerator/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/favicon-by-realfavicongenerator.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/favicon-by-realfavicongenerator/"
+        },
+        {
+            "name": "wpackagist-plugin/imsanity",
+            "version": "2.3.6",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/imsanity/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/imsanity.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/imsanity/"
+        },
+        {
+            "name": "wpackagist-plugin/seo-image",
+            "version": "3.0.5",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/seo-image/",
+                "reference": "tags/3.0.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/seo-image.3.0.5.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/seo-image/"
+        },
+        {
+            "name": "wpackagist-plugin/seo-ultimate",
+            "version": "7.6.5.8",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/seo-ultimate/",
+                "reference": "tags/7.6.5.8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/seo-ultimate.7.6.5.8.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/seo-ultimate/"
+        },
+        {
             "name": "wpackagist-plugin/the-events-calendar",
             "version": "4.1",
             "source": {
@@ -424,6 +564,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/the-events-calendar/"
+        },
+        {
+            "name": "wpackagist-plugin/xml-sitemap-feed",
+            "version": "4.5.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/xml-sitemap-feed/",
+                "reference": "tags/4.5.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/xml-sitemap-feed.4.5.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/xml-sitemap-feed/"
         }
     ],
     "packages-dev": [

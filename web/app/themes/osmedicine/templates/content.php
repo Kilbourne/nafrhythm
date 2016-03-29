@@ -1,7 +1,9 @@
 
 
 <article <?php post_class(); ?>>
-<div class="image-wrap"><?php the_post_thumbnail(); ?></div><div class="content-wrap">
+<div class="image-wrap"><?php if($post->post_type==='tribe_events' && ! has_post_thumbnail()){
+	echo '<img src="'. get_stylesheet_directory_uri().'/dist/images/event-placeholder.png" alt="">';
+	}else{the_post_thumbnail();} ?></div><div class="content-wrap">
   <header>
     <h2 class="entry-title"><?php the_title(); ?></h2>
 <?php if($post->post_type==='tribe_events'){
@@ -15,7 +17,10 @@ tribe_get_template_part( 'modules/meta' );
  } else{ get_template_part('templates/entry-meta'); }?>
   </header>
   <div class="entry-summary">
-    <?php the_excerpt(); ?>
+  <?php if($post->post_type==='tribe_events' && $post->post_content != ""){
+  	the_content( );
+  }else{ 
+     the_excerpt();} ?>
   </div>
   </div>
 </article>

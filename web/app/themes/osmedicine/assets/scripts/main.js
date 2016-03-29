@@ -19,6 +19,10 @@
     // All pages
     'common': {
       init: function() {
+         FastClick.attach(document.body);
+        var lightbox = lity();
+        $(document).on('click', '.credits', lightbox); 
+    
         (function Menu(){
           var isOpen=false;
           $(document).on('click',function(e){ if (e.which != 2 && !$(e.target).closest('#responsive-menu, #click-menu').length) { closeRM() }});
