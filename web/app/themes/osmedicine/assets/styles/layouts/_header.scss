@@ -21,7 +21,7 @@ header.banner{
 	background-image: url(../images/bg-pattern.png);
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
-	padding: 6.2vw 0 0; 
+	padding: 6.2vw 0 0;
 		@include 	media-query(palm){
 		display:none;
 		position:absolute;
@@ -155,6 +155,7 @@ main.main{
 .unslider{ position:relative;overflow:visible;}
 .full-slider{
 img{
+  width:100%;
 	max-width: 100%;
 	height: auto;
 }
@@ -308,12 +309,12 @@ article{
     dt,dd{
         display: inline-block;
         vertical-align: top;
-        
+
         &:first-of-type{margin-left: 0;}
     }
     address{ margin-bottom:0}
     abbr{ border-bottom: 0;text-decoration: none;}
-  } 
+  }
 	.entry-title{
 		font-size: 20px;
 		line-height: 1.2;
