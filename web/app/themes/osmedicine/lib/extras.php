@@ -82,6 +82,7 @@ if ( !function_exists( 'wpex_pagination' ) ) {
   
 }
 //add_action( 'after_setup_theme', __NAMESPACE__ . '\\tgm_envira_define_license_key' );
+/*
 function tgm_envira_define_license_key() {
     
     // If the key has not already been defined, define it now.
@@ -90,7 +91,7 @@ function tgm_envira_define_license_key() {
     }
     
 }
-
+*/
 add_action( 'wp_ajax_gesualdi_disco', __NAMESPACE__ . '\\gesualdi_disco' );
 add_action( 'wp_ajax_nopriv_gesualdi_disco', __NAMESPACE__ . '\\gesualdi_disco' );
 function gesualdi_disco() {
@@ -107,12 +108,17 @@ function gesualdi_disco() {
       setup_postdata($GLOBALS['post'] =& $disco );
       //$title=mb_convert_encoding(get_the_title(), 'UTF-8', 'HTML-ENTITIES');
       $title=html_entity_decode( get_the_title( ), ENT_QUOTES, 'UTF-8' ) ;
-      $thumbnail=get_the_post_thumbnail($disco->ID,'thumbnail');
-      $tracklist=get_field('tracklist',$disco->ID);
-      $excerpt=get_the_excerpt( );
-      $audio_sample=get_field('audio_sample',$disco->ID);
+               if(has_post_thumbnail($disco)){
+              $thumb= get_the_post_thumbnail($disco->ID,'thumbnail'); 
+            }else{
+              $thumb= '<img src="'.get_stylesheet_directory_uri().'/dist/images/avatar-placeholder.png'.'" alt=""> ';
+            }
+      
+      $strumento=get_field('strumento',$disco->ID);
+      $excerpt=get_the_content( );
+      
       wp_reset_postdata();
-      $data= array('title'=>$title,'thumb'=>$thumbnail,'tracklist'=>$tracklist,'excerpt'=>wpautop($excerpt,true),'audio_sample'=>$audio_sample);
+      $data= array('title'=>$title,'thumb'=>$thumb,'excerpt'=>wpautop($excerpt,true),'strumento'=>$strumento);
         wp_send_json_success( $data );
     }else{
       $data=  __( '<p class="error"><strong>ERROR</strong>: No post with id: </p>', 'sage' ).$post_id ;
@@ -120,4 +126,5 @@ function gesualdi_disco() {
     }
     wp_die();
 }
+
 ?>

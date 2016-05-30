@@ -1,13 +1,6 @@
 <footer class="content-info">
-<span class="left">&copy;2016 Marco Gesualdi</span><span class="right">
-<?php $page=get_page_by_title( 'Credits' );
-    $content = apply_filters('the_content', $page->post_content); 
-    if($content !=="") {
-    ?>
-<a class="credits" style="margin-right:1rem;" href="#credits" >Credits</a> <?php } ?> Web Agency Menthalia</span> 
+<span class="left">&copy;2016 NAFRHYTHM	|  Web Agency Menthalia </span><span class="right">
+<span>Progetto sostenuto con l'Otto per Mille delle Chiesa Valdese</span><span class="img-wrap"><img src="<?php echo get_stylesheet_directory_uri().'/dist/images/logo-valdese.jpg' ?> " alt=""> </span>
+</span> 
 </footer>
 
-<div id="credits" >
-	<h3> Credits </h3>
-	<?php  echo $content; ?>
-</div>
