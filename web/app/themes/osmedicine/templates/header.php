@@ -10,9 +10,9 @@
       <div class="social-wrap">
         <h3>Social</h3>
         <div class="social">
-          <a href="https://www.facebook.com/Marco-Gesualdi-Open-Heart-916728638400888/?fref=ts"><span class="fb"></span></a>
-          <a href="https://www.youtube.com/channel/UCntbxNJvfSveaP3ykHHJ-6A"><span class="yt"></span></a>
-          <a href="mailto:marcogesualdi@libero.it"><span class="mail"></span></a>
+          <a href=""><span class="fb"></span></a>
+          <a href=""><span class="yt"></span></a>
+          <a href="mailto:"><span class="mail"></span></a>
         </div>
       </div>
     </nav>

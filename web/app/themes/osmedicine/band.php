@@ -54,9 +54,7 @@ Template Name: Band Template
   	//for($x=0; $x<4;$x++){
   	//	$display.= '<li class="empty-list"></li>';
   	//}
-  	echo '<div class="title-list-wrap">
-      <h4>I componenti</h4>
-    </div><div class="discs-list">'.$display.'</div>';
+  	echo '<div class="discs-list">'.$display.'</div>';
   }
    ?>
 

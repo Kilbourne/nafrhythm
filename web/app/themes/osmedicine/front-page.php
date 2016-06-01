@@ -19,4 +19,7 @@
     echo wp_get_attachment_image( get_field('full-width_background_image','option'), "large");
    ?>
   <?php get_template_part('templates/content', 'page'); ?>
+  <audio src="<?php  echo get_field('audio_homepage','option');?>" autoplay loop>
+  Il tuo browser non supporta l'elemento <code>audio</code>.
+</audio>
 <?php endwhile; ?>

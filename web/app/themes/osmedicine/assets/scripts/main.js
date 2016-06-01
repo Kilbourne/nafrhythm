@@ -50,6 +50,8 @@
                   isOpen = false
               //})
           }
+          $(document).click(function(e) {
+            if (e.which != 2 && !$(e.target).closest('#responsive-menu,#click-menu').length) { closeRM(); } });
           $(window).resize(function() {
               $('#responsive-menu').stop(true, true);
               //$('#responsive-menu').css('height', $(document).height());
@@ -79,7 +81,22 @@
     },
     'page_template_band':{
       init:function(){
-        $('.discs-list').slick({slidesToShow:3,prevArrow:'<button type="button" class="slick-prev"></button>',nextArrow:'<button type="button" class="slick-next"></button>'});
+        $('.discs-list').slick({slidesToShow:3,prevArrow:'<button type="button" class="slick-prev"></button>',nextArrow:'<button type="button" class="slick-next"></button>',
+      responsive: [{
+
+      breakpoint: 1015,
+      settings: {
+        slidesToShow: 2
+      }
+
+    },{
+
+      breakpoint: 576,
+      settings: {
+        slidesToShow: 1
+      }
+
+    }]});
         $('.componente-link').click(ajaxDisco);
          History.Adapter.bind(window,'statechange',function statechangeCallback (){ // Note: We are using statechange instead of popstate
            var State = History.getState(); // Note: We are using History.getState() instead of event.state

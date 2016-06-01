@@ -2,7 +2,7 @@
 
 <article <?php post_class(); ?>>
 <div class="image-wrap"><?php if($post->post_type==='tribe_events' && ! has_post_thumbnail()){
-	echo '<img src="'. get_stylesheet_directory_uri().'/dist/images/event-placeholder.png" alt="">';
+	echo '<img src="'. get_field('events_default_thumbnail','option').'" alt="">';
 	}else{the_post_thumbnail();} ?></div><div class="content-wrap">
   <header>
     <h2 class="entry-title"><?php the_title(); ?></h2>
