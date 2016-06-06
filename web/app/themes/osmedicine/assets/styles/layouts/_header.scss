@@ -499,7 +499,7 @@ article {
 		}
     }
     .image-wrap {
-        
+        width: 100%;
         float: left;
         padding-bottom: 1rem;
         @include media-query(lap-and-up)
@@ -511,6 +511,8 @@ article {
         >img {
             max-width: 100%;
             height: auto;
+            display:block;
+            margin: 0 auto;
         }
     }
     .tribe-events-meta-group {

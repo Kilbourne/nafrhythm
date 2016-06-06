@@ -52,6 +52,7 @@ use Roots\Sage\Wrapper;
       do_action('get_footer');
       get_template_part('templates/footer');?>
       <script>
+      
 window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-75826071-1', 'auto');
 ga('set', 'anonymizeIp', true);
