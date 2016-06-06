@@ -18,6 +18,7 @@
   	}
     echo wp_get_attachment_image( get_field('full-width_background_image','option'), "large");
    ?>
+   <img class="home-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/logo.svg" alt="<?php bloginfo('name'); ?>">
   <?php get_template_part('templates/content', 'page'); ?>
   <audio src="<?php  echo get_field('audio_homepage','option');?>" autoplay loop>
   Il tuo browser non supporta l'elemento <code>audio</code>.

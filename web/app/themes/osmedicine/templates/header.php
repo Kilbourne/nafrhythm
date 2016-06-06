@@ -10,9 +10,9 @@
       <div class="social-wrap">
         <h3>Social</h3>
         <div class="social">
-          <a href=""><span class="fb"></span></a>
-          <a href=""><span class="yt"></span></a>
-          <a href="mailto:"><span class="mail"></span></a>
+          <a href="https://www.facebook.com/nafrythm/?fref=ts"><span class="fb"></span></a>
+          <!--<a href=""><span class="yt"></span></a>-->
+          <a href="mailto:info@nafrythm.it"><span class="mail"></span></a>
         </div>
       </div>
     </nav>

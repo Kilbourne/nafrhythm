@@ -86,6 +86,7 @@ header.banner {
     display: flex;
 flex-direction: column;
 justify-content: space-between;
+flex: 1 0 auto;
     @include media-query(palm) {
         display: none;
         position: absolute;
@@ -103,12 +104,13 @@ justify-content: space-between;
 }
 
 .wrap.container {
-    width: 100%;
+    //width: 100%;
     @include media-query(lap-and-up) {
         width: 76.25%;
         display: flex;
     }
     ;
+    flex: 1 0 auto;
 }
 
 main.main {
@@ -116,7 +118,7 @@ main.main {
     padding: 0 2%;
     position: relative;
     overflow: hidden;
-    font-size: 1rem;
+    font-size: 1.125rem;
 }
 
 .content.row {
@@ -135,6 +137,14 @@ main.main {
     }
 }
 
+body.admin-bar{
+	 .page-wrapper > .wrap.container {
+	 	margin-top: 32px !important;
+		@media screen and ( max-width: 782px ) {
+			margin-top: 46px !important;
+		}
+	 }
+}
 body.home {
     .page-wrapper {
         background-image: none;
@@ -144,7 +154,7 @@ body.home {
         display: flex;
 	    flex-direction: column;
 	    overflow: hidden;
-	    flex-grow:1;
+	    flex-grow:1;	    
         > img {
             //width: auto;
             //height: 100%;
@@ -180,11 +190,29 @@ body.home {
     .page-header {
     	margin: 6.5rem 0 3rem;
     }
+    .home-logo{
+    	position:absolute;
+    	top: 2rem;
+		left: 50%;
+		transform: translate(-50%);
+    	@include media-query(lap-and-up)
+    	{
+    		display:none;
+    	}
+    }
 }
 body.page-template-band{
 	.page-wrapper {
 		top: 0;
 		transform: translateY(0);
+	}
+}
+body{
+	.page-wrapper{
+		@include media-query(palm)
+		{
+			    flex-direction: column;
+		}
 	}
 }
 /**
@@ -357,7 +385,7 @@ body.page-template-band{
         }
         p {
             margin-bottom: 0;
-            font-size: 1rem;
+            font-size: 1.125rem;
         }
     }
 }
@@ -453,6 +481,10 @@ article {
     border-bottom: 1px solid;
     margin-bottom: .75rem;
     padding-bottom: 4px;
+    &.nothumb header{
+    	display: inline-block;
+		margin-left: 20%;
+    }
     .image-wrap {
         margin-right: 1.5rem;
         float: left;
@@ -567,10 +599,11 @@ article {
 
 .content-info {
 	background-color: #303030;
-	width: 100%;
+	//width: 100%;
 	padding: 3px 1%;
 	font-size: .8rem;	
 	position:relative;
+	flex: 1 0 auto;
 	>div{
 		display: flex;
 	justify-content: space-between;

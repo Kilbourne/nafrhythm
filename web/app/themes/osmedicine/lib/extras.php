@@ -126,5 +126,5 @@ function gesualdi_disco() {
     }
     wp_die();
 }
-
+add_theme_support( 'admin-bar', array( 'callback' => '__return_false' ) );
 ?>

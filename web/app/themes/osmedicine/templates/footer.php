@@ -1,6 +1,6 @@
 <footer class="content-info">
 <div>
-<span class="left">&copy;2016 NAFRHYTHM	|  Web Agency Menthalia </span><span class="right">
+<span class="left">&copy;2016 NAFRHYTHM</span><span class="right">
 <span>Progetto sostenuto con l'Otto per Mille delle Chiesa Valdese</span>
 </span>	
 </div> 

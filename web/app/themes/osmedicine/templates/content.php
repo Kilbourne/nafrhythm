@@ -1,6 +1,7 @@
 
-
-<article <?php post_class(); ?>>
+<?php $classes='';
+if($post->post_type!=='tribe_events' && ! has_post_thumbnail())$classes='nothumb'; ?>
+<article <?php post_class($classes); ?>>
 <div class="image-wrap"><?php if($post->post_type==='tribe_events' && ! has_post_thumbnail()){
 	echo '<img src="'. get_field('events_default_thumbnail','option').'" alt="">';
 	}else{the_post_thumbnail();} ?></div><div class="content-wrap">
