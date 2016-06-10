@@ -169,7 +169,10 @@ body.home {
     main.main {
         padding: 0;
         //display:none;
-	    overflow: hidden;	    	  
+	    overflow: hidden;	    
+        @include media-query(palm) {
+            height:auto;
+        }
         > img {
             width: 100%;
             //height: auto;
@@ -177,7 +180,7 @@ body.home {
         }
     }
     .wrap.container {
-    	
+    	width:100%;
         @include media-query(lap-and-up)
         {
             display: none;
