@@ -95,10 +95,10 @@ flex: 1 0 auto;
         border: 1px solid #fff;
         border-left: none;
         //border-top: none;
-        background-color: #303030;
-        width: auto;
+        background-color: #303030;        
         padding: 2% 2% 0;
-        min-width: 335px;
+        width: 335px;
+        max-width: 100%;
         &.RMOpened {
             display: flex;
         }
@@ -164,28 +164,38 @@ body.admin-bar{
 
 body.home {
     .page-wrapper {
-        background-image: none;
+        display:block;
     }
     main.main {
         padding: 0;
-        display: flex;
-	    flex-direction: column;
-	    overflow: hidden;
-	    flex-grow:1;	    
+        //display:none;
+	    overflow: hidden;	    	  
         > img {
-            //width: auto;
-            //height: 100%;
+            width: 100%;
+            //height: auto;
 			flex-grow:1;
         }
     }
     .wrap.container {
-    	width: 100%; 
+    	
         @include media-query(lap-and-up)
         {
-        	width: 76.25%;
+            display: none;
+        	//width: 76.25%;
         }
     }
-   //header.banner {
+   header.banner {
+    
+    overflow: auto;
+    @include media-query(lap-and-up)
+    {
+        width:auto;
+    display: inline-block;
+    }
+    @include media-query(palm) {
+        background-image:none;
+
+    }
    //	overflow: auto;        
    //    background-color: #303030;
    //    @include media-query(lap-and-up) {
@@ -196,7 +206,7 @@ body.home {
    //        justify-content: space-around;
    //        flex-direction: column;
    //    }
-   //}
+   }
     .content.row {
         background-color: #333333;
         //padding: 4rem 7.5% 2rem;
@@ -207,7 +217,11 @@ body.home {
     .page-header {
     	margin: 6.5rem 0 3rem;
     }
-
+    .home-logo{
+       @include media-query(palm) {
+            max-width:250px;
+        } 
+    }
 }
 
 body.page-template-band{
