@@ -1,6 +1,6 @@
 <header class="banner" id="responsive-menu">
   
-    <a class="brand" href="<?= esc_url(home_url('/')); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/logo.svg" alt="<?php bloginfo('name'); ?>"></a>
+    <a class="brand" href="<?= esc_url(home_url('/')); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/logo.svg" alt="<?php bloginfo('name'); ?>"><p>Music and Platform</p></a>
     <nav class="nav-primary" >
       <?php
       if (has_nav_menu('primary_navigation')) :
