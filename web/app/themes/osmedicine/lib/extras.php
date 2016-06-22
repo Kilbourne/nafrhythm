@@ -137,4 +137,26 @@ function tgm_envira_define_license_key() {
     }
     
 }
-?>
+
+function hide_update_notice_to_all_but_admin_users()
+{
+    if (!current_user_can('update_core')) {
+        remove_action( 'admin_notices', 'update_nag', 3 );
+    }
+}
+add_action( 'admin_head', __NAMESPACE__ . '\\hide_update_notice_to_all_but_admin_users', 1 );
+
+function get_componenti_date(){
+      $band=get_posts(array( 
+      "post_type"=>"dischi",
+      "posts_per_page"=>-1
+      ));
+      $array=array();
+      foreach ($band as $key => $componente) {
+        setup_postdata($GLOBALS['post'] =& $componente );
+        $perma=get_the_permalink($componente->ID);
+        $array[$perma]=get_the_modified_date().' '.get_the_modified_time();  
+        wp_reset_postdata();        
+      }
+      return $array;
+}
