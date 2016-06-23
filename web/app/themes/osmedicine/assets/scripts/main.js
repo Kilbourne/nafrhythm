@@ -14,7 +14,7 @@
   function gaTrack(path, title) {
   ga('set', { page: path, title: title });
   ga('send', 'pageview');
-}}
+}
   var disc_cache=[];
 
   // Use this variable to set up the common and page specific functions. If you

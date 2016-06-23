@@ -719,7 +719,11 @@ right: 15px;
     }
 }
 
-
+body.single-tribe_events{
+    #footer{
+        p{display:none; }
+    }
+}
 /*
 
 .discografia .content.row {
