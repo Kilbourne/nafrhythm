@@ -22,7 +22,9 @@ tribe_get_template_part( 'modules/meta' );
   	the_content( );
   }else{ 
      the_excerpt();} ?>
+     <?php juiz_sps(); ?>
   </div>
   </div>
+
 </article>
 

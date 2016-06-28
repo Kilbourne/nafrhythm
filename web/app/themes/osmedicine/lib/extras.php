@@ -148,7 +148,7 @@ add_action( 'admin_head', __NAMESPACE__ . '\\hide_update_notice_to_all_but_admin
 
 function get_componenti_date(){
       $band=get_posts(array( 
-      "post_type"=>"dischi",
+      "post_type"=>"band",
       "posts_per_page"=>-1
       ));
       $array=array();
