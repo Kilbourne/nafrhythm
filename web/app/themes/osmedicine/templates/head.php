@@ -2,6 +2,7 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="3D8tHILiMb6XYpLOWfE6jqMqM_wpKsuN_brAd8vWGwA" />
   <?php 
    $all_page_background_id=get_field('other_pages_background_image','option');
    $home_page_background_id=get_field('full-width_background_image','option');   
