@@ -20,8 +20,8 @@ tribe_get_template_part( 'modules/meta' );
   <div class="entry-summary">
   <?php if($post->post_type==='tribe_events' && $post->post_content != ""){
   	the_content( );
-  }else{ 
-     the_excerpt();} ?>
+  }else{
+     the_content( );} ?>
      <?php juiz_sps(); ?>
   </div>
   </div>
